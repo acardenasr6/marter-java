@@ -7,6 +7,7 @@ import com.acardenas.pooclasesabstractas.form.elementos.TextareaForm;
 import com.acardenas.pooclasesabstractas.form.elementos.select.Opcion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EjemploForm {
@@ -21,11 +22,11 @@ public class EjemploForm {
 
         SelectForm lenguaje = new SelectForm("lenguaje");
         Opcion java = new Opcion("1", "Java");
-        lenguaje.addObcion(java);
-        lenguaje.addObcion(new Opcion("2","Python"));
-        lenguaje.addObcion(new Opcion("3","JavaStript"));
-        lenguaje.addObcion(new Opcion("4", "TypeScript"));
-        lenguaje.addObcion(new Opcion("5","PHP"));
+        lenguaje.addObcion(java)
+                .addObcion(new Opcion("2","Python"))
+                .addObcion(new Opcion("3","JavaStript"))
+                .addObcion(new Opcion("4", "TypeScript"))
+                .addObcion(new Opcion("5","PHP"));
 
         username.setValor("john.doe");
         password.setValor("a1b2c3");
@@ -34,17 +35,15 @@ public class EjemploForm {
         experiencia.setValor("... más de diez años de experiencia");
         java.setSelected(true);
 
-        List<ElementoForm> elementoForms = new ArrayList<>();
-        elementoForms.add(username);
-        elementoForms.add(password);
-        elementoForms.add(email);
-        elementoForms.add(edad);
-        elementoForms.add(experiencia);
-        elementoForms.add(lenguaje);
+        List<ElementoForm> elementoForms = Arrays.asList(
+                username,
+                password,
+                email,
+                edad,
+                experiencia,
+                lenguaje);
 
-        for (ElementoForm e: elementoForms){
-            System.out.println(e.dibujarHtml());
-        }
+        elementoForms.forEach(e -> System.out.println(e.dibujarHtml()));
 
     }
 }
