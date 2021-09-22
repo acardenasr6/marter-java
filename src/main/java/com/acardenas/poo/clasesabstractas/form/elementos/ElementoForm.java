@@ -1,7 +1,7 @@
-package com.acardenas.pooclasesabstractas.form.elementos;
+package com.acardenas.poo.clasesabstractas.form.elementos;
 
-import com.acardenas.pooclasesabstractas.form.validador.LargoValidador;
-import com.acardenas.pooclasesabstractas.form.validador.Validador;
+import com.acardenas.poo.clasesabstractas.form.validador.Validador;
+import com.acardenas.poo.clasesabstractas.form.validador.LargoValidador;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.acardenas.pooclasesabstractas.form.elementos.select;
+package com.acardenas.poo.clasesabstractas.form.elementos.select;
 
 public class Opcion {
     private String valor;

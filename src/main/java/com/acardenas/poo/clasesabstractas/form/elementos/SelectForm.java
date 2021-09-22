@@ -1,6 +1,6 @@
-package com.acardenas.pooclasesabstractas.form.elementos;
+package com.acardenas.poo.clasesabstractas.form.elementos;
 
-import com.acardenas.pooclasesabstractas.form.elementos.select.Opcion;
+import com.acardenas.poo.clasesabstractas.form.elementos.select.Opcion;
 
 import java.util.ArrayList;
 import java.util.List;

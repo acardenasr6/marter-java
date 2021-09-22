@@ -1,4 +1,4 @@
-package com.acardenas.pooclasesabstractas.form.elementos;
+package com.acardenas.poo.clasesabstractas.form.elementos;
 
 public class TextareaForm extends ElementoForm{
 

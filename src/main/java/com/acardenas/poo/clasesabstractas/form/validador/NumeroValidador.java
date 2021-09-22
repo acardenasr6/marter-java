@@ -1,4 +1,4 @@
-package com.acardenas.pooclasesabstractas.form.validador;
+package com.acardenas.poo.clasesabstractas.form.validador;
 
 public class NumeroValidador extends Validador{
 
