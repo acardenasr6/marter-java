@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class RegExpUtil {
 
     private static final Class<RegExpUtil> MY_CLASS = RegExpUtil.class;
+    public static final String EMAIL_REGEX = "^(.+)@(.+)$";
 
     private RegExpUtil() {
         // constructor vacio

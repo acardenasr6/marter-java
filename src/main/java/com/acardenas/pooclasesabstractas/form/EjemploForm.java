@@ -5,6 +5,7 @@ import com.acardenas.pooclasesabstractas.form.elementos.InputForm;
 import com.acardenas.pooclasesabstractas.form.elementos.SelectForm;
 import com.acardenas.pooclasesabstractas.form.elementos.TextareaForm;
 import com.acardenas.pooclasesabstractas.form.elementos.select.Opcion;
+import com.acardenas.pooclasesabstractas.form.validador.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,13 +15,24 @@ public class EjemploForm {
     public static void main(String[] args) {
 
         InputForm username = new InputForm("username");
+        username.addValidador(new RequeridoValidador());
+
         InputForm password = new InputForm("clave", "password");
+        password.addValidador(new RequeridoValidador())
+                .addValidador(new LargoValidador(6,12));
+
         InputForm email = new InputForm("email", "email");
+        email.addValidador(new RequeridoValidador())
+                .addValidador(new EmailValidador());
+
         InputForm edad = new InputForm("edad", "number");
+        edad.addValidador(new NumeroValidador());
 
         TextareaForm experiencia = new TextareaForm("exp", 5,9);
 
         SelectForm lenguaje = new SelectForm("lenguaje");
+        lenguaje.addValidador(new NoNuloValidador());
+
         Opcion java = new Opcion("1", "Java");
         lenguaje.addObcion(java)
                 .addObcion(new Opcion("2","Python"))
@@ -36,9 +48,9 @@ public class EjemploForm {
         };
 
         saludar.setValor("Hola que tal este campo está deshabilitado!");
-        username.setValor("john.doe");
-        password.setValor("a1b2c3");
-        email.setValor("jhon.doe@correo.com");
+        username.setValor("");
+        password.setValor("a1b2c");
+        email.setValor("jhon.doecorreo.com");
         edad.setValor("28");
         experiencia.setValor("... más de diez años de experiencia");
         java.setSelected(true);
@@ -53,6 +65,10 @@ public class EjemploForm {
                 saludar);
 
         elementoForms.forEach(e -> System.out.println(e.dibujarHtml()));
-
+        elementoForms.forEach(e -> {
+            if (!e.esValido()){
+                e.getErrores().forEach(System.out::println);
+            }
+        });
     }
 }
